@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="height" constant="80" id="kSe-Ww-TxF"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpx-9j-JYJ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpx-9j-JYJ" customClass="SwipeView">
                                 <rect key="frame" x="0.0" y="100" width="320" height="468"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBx-TD-aEG">
@@ -144,6 +144,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="swipeView" destination="bpx-9j-JYJ" id="m97-fx-3qS"/>
                         <outlet property="tabHeaderView" destination="TIw-oA-aKW" id="rgT-8S-RCl"/>
                     </connections>
                 </viewController>

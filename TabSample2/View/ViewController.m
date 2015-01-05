@@ -15,29 +15,28 @@
 @implementation ViewController {
     
     __weak IBOutlet TabHeaderView *tabHeaderView;
+    __weak IBOutlet SwipeView *swipeView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     tabHeaderView.delegate = self;
-//    swipeView.delegate = self;
+    swipeView.swipeViewDelegate = self;
     
     _tabs = @[@"最新情報",
               @"ランキング",
               @"公式",
-              @"攻略",
               @"検索",
               @"設定"];
     
     tabHeaderView.tabs = _tabs;
-//    swipeView.tabs = _tabs;
 }
 
 - (void)setPage:(NSInteger)page {
     if(_page==page)return;
 //    testLabel.text = [NSString stringWithFormat:@"%ld",(long)page];
     _page = page;
-//    swipeView.page = _page;
+    swipeView.page = _page;
     tabHeaderView.page = _page;
 }
 

@@ -29,6 +29,7 @@
 		E9B54B061A5ACC61007A20A0 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B54B051A5ACC61007A20A0 /* XMLReader.m */; };
 		E9B54B0C1A5ACEBF007A20A0 /* TabHeaderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B54B091A5ACEBF007A20A0 /* TabHeaderButton.m */; };
 		E9B54B0D1A5ACEBF007A20A0 /* TabHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B54B0B1A5ACEBF007A20A0 /* TabHeaderView.m */; };
+		E9B54B111A5AD1DA007A20A0 /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B54B101A5AD1DA007A20A0 /* SwipeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		E9B54B091A5ACEBF007A20A0 /* TabHeaderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabHeaderButton.m; sourceTree = "<group>"; };
 		E9B54B0A1A5ACEBF007A20A0 /* TabHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabHeaderView.h; sourceTree = "<group>"; };
 		E9B54B0B1A5ACEBF007A20A0 /* TabHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabHeaderView.m; sourceTree = "<group>"; };
+		E9B54B0F1A5AD1DA007A20A0 /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
+		E9B54B101A5AD1DA007A20A0 /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,7 @@
 				E9B54AFC1A5ACBF1007A20A0 /* webViewController.h */,
 				E9B54AFD1A5ACBF1007A20A0 /* webViewController.m */,
 				E9B54B071A5ACE90007A20A0 /* TabHeaderView */,
+				E9B54B0E1A5AD1B0007A20A0 /* SwipeView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -272,6 +276,15 @@
 				E9B54B0B1A5ACEBF007A20A0 /* TabHeaderView.m */,
 			);
 			path = TabHeaderView;
+			sourceTree = "<group>";
+		};
+		E9B54B0E1A5AD1B0007A20A0 /* SwipeView */ = {
+			isa = PBXGroup;
+			children = (
+				E9B54B0F1A5AD1DA007A20A0 /* SwipeView.h */,
+				E9B54B101A5AD1DA007A20A0 /* SwipeView.m */,
+			);
+			path = SwipeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +403,7 @@
 				E9B54AF71A5AC9BC007A20A0 /* settingViewController.m in Sources */,
 				E9B54AF41A5AC9BC007A20A0 /* searchTableViewCell.m in Sources */,
 				E9B54AEF1A5AC9BC007A20A0 /* homeTableViewCell.m in Sources */,
+				E9B54B111A5AD1DA007A20A0 /* SwipeView.m in Sources */,
 				E9B54A941A5AC6FF007A20A0 /* main.m in Sources */,
 				E9B54AF21A5AC9BC007A20A0 /* rankingTableViewCell.m in Sources */,
 			);

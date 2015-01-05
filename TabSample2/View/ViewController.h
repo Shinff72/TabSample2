@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "TabHeaderView.h"
+#import "SwipeView.h"
 
-@interface ViewController : UIViewController <TabHeaderViewDelegate>
+@interface ViewController : UIViewController <TabHeaderViewDelegate, SwipeViewDelegate>
 
 @property (nonatomic) NSInteger page;
 @property (nonatomic) NSArray *tabs;
