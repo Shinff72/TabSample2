@@ -7,7 +7,8 @@
         <!--Navigation Controller-->
         <scene sceneID="8mQ-Xx-So6">
             <objects>
-                <navigationController navigationBarHidden="YES" id="PoU-9F-iNb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="PoU-9F-iNb" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Who-HY-oDN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -24,7 +25,7 @@
         <!--View Controller-->
         <scene sceneID="Jqa-0N-kjb">
             <objects>
-                <viewController id="d7g-Am-5uL" customClass="ViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="d7g-Am-5uL" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3R6-P4-CaP"/>
                         <viewControllerLayoutGuide type="bottom" id="dtP-Ee-Jtj"/>
@@ -33,48 +34,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIw-oA-aKW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
-                                <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZUu-GY-69P"/>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIw-oA-aKW" customClass="TabHeaderView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="kSe-Ww-TxF"/>
+                                    <constraint firstAttribute="height" constant="80" id="kSe-Ww-TxF"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpx-9j-JYJ">
-                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
+                                <rect key="frame" x="0.0" y="100" width="320" height="468"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBx-TD-aEG">
-                                        <rect key="frame" x="0.0" y="0.0" width="1600" height="508"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1600" height="468"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BbJ-mh-CgZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="468"/>
                                                 <connections>
                                                     <segue destination="n7Z-34-Xco" kind="embed" id="2Ac-bf-qZC"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXT-wV-73a">
-                                                <rect key="frame" x="320" y="0.0" width="320" height="508"/>
+                                                <rect key="frame" x="320" y="0.0" width="320" height="468"/>
                                                 <connections>
                                                     <segue destination="QID-xP-0UU" kind="embed" id="VsA-cy-gpj"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GpZ-tB-RfL">
-                                                <rect key="frame" x="640" y="0.0" width="320" height="508"/>
+                                                <rect key="frame" x="640" y="0.0" width="320" height="468"/>
                                                 <connections>
                                                     <segue destination="7uZ-Lf-9dQ" kind="embed" id="CEv-E2-pQb"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLI-kv-CQx">
-                                                <rect key="frame" x="960" y="0.0" width="320" height="508"/>
+                                                <rect key="frame" x="960" y="0.0" width="320" height="468"/>
                                                 <connections>
                                                     <segue destination="icf-eo-N2U" kind="embed" id="LWs-ft-IaM"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ce-EP-60u">
-                                                <rect key="frame" x="1280" y="0.0" width="320" height="508"/>
+                                                <rect key="frame" x="1280" y="0.0" width="320" height="468"/>
                                                 <connections>
                                                     <segue destination="tf8-IC-hcQ" kind="embed" id="ako-eK-yvU"/>
                                                 </connections>
@@ -123,7 +121,7 @@
                             <constraint firstItem="bpx-9j-JYJ" firstAttribute="top" secondItem="TIw-oA-aKW" secondAttribute="bottom" id="c3M-cr-s2R"/>
                             <constraint firstItem="TIw-oA-aKW" firstAttribute="leading" secondItem="qi1-sB-oRP" secondAttribute="leading" id="c6e-Fi-6GC"/>
                             <constraint firstItem="dtP-Ee-Jtj" firstAttribute="top" secondItem="bpx-9j-JYJ" secondAttribute="bottom" id="eRL-Xw-A2k"/>
-                            <constraint firstItem="TIw-oA-aKW" firstAttribute="top" secondItem="qi1-sB-oRP" secondAttribute="top" id="eVm-rX-SQ8"/>
+                            <constraint firstItem="TIw-oA-aKW" firstAttribute="top" secondItem="qi1-sB-oRP" secondAttribute="top" constant="20" id="eVm-rX-SQ8"/>
                             <constraint firstItem="bpx-9j-JYJ" firstAttribute="leading" secondItem="qi1-sB-oRP" secondAttribute="leading" id="keK-3B-t3T"/>
                             <constraint firstItem="bpx-9j-JYJ" firstAttribute="top" secondItem="3R6-P4-CaP" secondAttribute="bottom" constant="38" id="nyg-jH-puT"/>
                             <constraint firstItem="bpx-9j-JYJ" firstAttribute="top" secondItem="TIw-oA-aKW" secondAttribute="bottom" id="ppy-DB-jVj"/>
@@ -140,10 +138,14 @@
                             </mask>
                         </variation>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="1mv-om-pDB">
                         <nil key="title"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tabHeaderView" destination="TIw-oA-aKW" id="rgT-8S-RCl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eoN-ra-CFE" sceneMemberID="firstResponder"/>
             </objects>

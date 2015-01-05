@@ -27,6 +27,8 @@
 		E9B54AFE1A5ACBF1007A20A0 /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B54AFD1A5ACBF1007A20A0 /* webViewController.m */; };
 		E9B54B021A5ACC00007A20A0 /* callClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B54B011A5ACC00007A20A0 /* callClass.m */; };
 		E9B54B061A5ACC61007A20A0 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B54B051A5ACC61007A20A0 /* XMLReader.m */; };
+		E9B54B0C1A5ACEBF007A20A0 /* TabHeaderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B54B091A5ACEBF007A20A0 /* TabHeaderButton.m */; };
+		E9B54B0D1A5ACEBF007A20A0 /* TabHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B54B0B1A5ACEBF007A20A0 /* TabHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,10 @@
 		E9B54B011A5ACC00007A20A0 /* callClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = callClass.m; sourceTree = "<group>"; };
 		E9B54B041A5ACC61007A20A0 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		E9B54B051A5ACC61007A20A0 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		E9B54B081A5ACEBF007A20A0 /* TabHeaderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabHeaderButton.h; sourceTree = "<group>"; };
+		E9B54B091A5ACEBF007A20A0 /* TabHeaderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabHeaderButton.m; sourceTree = "<group>"; };
+		E9B54B0A1A5ACEBF007A20A0 /* TabHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabHeaderView.h; sourceTree = "<group>"; };
+		E9B54B0B1A5ACEBF007A20A0 /* TabHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,8 +169,6 @@
 		E9B54AD71A5AC992007A20A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E9B54AFC1A5ACBF1007A20A0 /* webViewController.h */,
-				E9B54AFD1A5ACBF1007A20A0 /* webViewController.m */,
 				E9B54AD81A5AC9BC007A20A0 /* homeTableView */,
 				E9B54ADD1A5AC9BC007A20A0 /* officalWebView */,
 				E9B54AE01A5AC9BC007A20A0 /* rankingTableView */,
@@ -172,6 +176,9 @@
 				E9B54AEA1A5AC9BC007A20A0 /* settingView */,
 				E9B54A981A5AC6FF007A20A0 /* ViewController.h */,
 				E9B54A991A5AC6FF007A20A0 /* ViewController.m */,
+				E9B54AFC1A5ACBF1007A20A0 /* webViewController.h */,
+				E9B54AFD1A5ACBF1007A20A0 /* webViewController.m */,
+				E9B54B071A5ACE90007A20A0 /* TabHeaderView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,6 +261,17 @@
 				E9B54B051A5ACC61007A20A0 /* XMLReader.m */,
 			);
 			path = XMLReader;
+			sourceTree = "<group>";
+		};
+		E9B54B071A5ACE90007A20A0 /* TabHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				E9B54B081A5ACEBF007A20A0 /* TabHeaderButton.h */,
+				E9B54B091A5ACEBF007A20A0 /* TabHeaderButton.m */,
+				E9B54B0A1A5ACEBF007A20A0 /* TabHeaderView.h */,
+				E9B54B0B1A5ACEBF007A20A0 /* TabHeaderView.m */,
+			);
+			path = TabHeaderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +381,8 @@
 				E9B54A9A1A5AC6FF007A20A0 /* ViewController.m in Sources */,
 				E9B54A971A5AC6FF007A20A0 /* AppDelegate.m in Sources */,
 				E9B54AF01A5AC9BC007A20A0 /* homeTableViewController.m in Sources */,
+				E9B54B0D1A5ACEBF007A20A0 /* TabHeaderView.m in Sources */,
+				E9B54B0C1A5ACEBF007A20A0 /* TabHeaderButton.m in Sources */,
 				E9B54AF61A5AC9BC007A20A0 /* settingTableViewCell.m in Sources */,
 				E9B54B021A5ACC00007A20A0 /* callClass.m in Sources */,
 				E9B54AF51A5AC9BC007A20A0 /* searchTableViewController.m in Sources */,
