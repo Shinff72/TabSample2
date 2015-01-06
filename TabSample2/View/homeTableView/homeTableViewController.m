@@ -77,9 +77,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"タップされたよ！");
     
-    //    webViewController *webViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"webViewController"];
-    //    webViewController.item = _RSSItems[indexPath.row];
-    //    [self.navigationController pushViewController:webViewController animated:YES];
+        webViewController *webViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"webViewController"];
+        webViewController.item = _tableItems[indexPath.row];
+        [self.navigationController pushViewController:webViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

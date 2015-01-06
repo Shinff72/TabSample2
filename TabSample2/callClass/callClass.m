@@ -49,9 +49,11 @@
              Item *item = [[Item alloc] init];
              item.title = dict[@"title"][@"text"];
              item.date = dict[@"published"][@"text"];
+             item.url = dict[@"link"][@"href"];
              
-             NSLog(@"%@",item.title);
-             NSLog(@"%@",item.date);
+//             NSLog(@"%@",item.title);
+//             NSLog(@"%@",item.date);
+             NSLog(@"URL___%@",item.url);
              
              [items addObject:item];
              
@@ -91,10 +93,12 @@
              Item *item = [[Item alloc] init];
              item.title = dict[@"title"][@"text"];
              item.date = dict[@"published"][@"text"];
+             item.url = dict[@"link"][@"href"];
              
-             NSLog(@"%@",item.title);
-             NSLog(@"%@",item.date);
-             
+//             NSLog(@"%@",item.title);
+//             NSLog(@"%@",item.date);
+             NSLog(@"URL___%@",item.url);
+
              [items addObject:item];
              
              
@@ -133,9 +137,12 @@
              Item *item = [[Item alloc] init];
              item.title = dict[@"title"][@"text"];
              item.date = dict[@"published"][@"text"];
+             item.url = dict[@"link"][@"href"];
+
              
-             NSLog(@"%@",item.title);
-             NSLog(@"%@",item.date);
+//             NSLog(@"%@",item.title);
+//             NSLog(@"%@",item.date);
+             NSLog(@"URL___%@",item.url);
              
              [items addObject:item];
              

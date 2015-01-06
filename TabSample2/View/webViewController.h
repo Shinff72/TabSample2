@@ -12,6 +12,6 @@
 @interface webViewController : UIViewController
 
 @property (nonatomic) Item *item;
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 
 @end

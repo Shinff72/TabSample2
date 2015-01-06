@@ -30,6 +30,7 @@
 		E9B54B0C1A5ACEBF007A20A0 /* TabHeaderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B54B091A5ACEBF007A20A0 /* TabHeaderButton.m */; };
 		E9B54B0D1A5ACEBF007A20A0 /* TabHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B54B0B1A5ACEBF007A20A0 /* TabHeaderView.m */; };
 		E9B54B111A5AD1DA007A20A0 /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B54B101A5AD1DA007A20A0 /* SwipeView.m */; };
+		E9B54B151A5B9583007A20A0 /* koryakuWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B54B141A5B9583007A20A0 /* koryakuWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		E9B54B0B1A5ACEBF007A20A0 /* TabHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabHeaderView.m; sourceTree = "<group>"; };
 		E9B54B0F1A5AD1DA007A20A0 /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
 		E9B54B101A5AD1DA007A20A0 /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
+		E9B54B131A5B9583007A20A0 /* koryakuWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = koryakuWebViewController.h; sourceTree = "<group>"; };
+		E9B54B141A5B9583007A20A0 /* koryakuWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = koryakuWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,7 @@
 			children = (
 				E9B54AD81A5AC9BC007A20A0 /* homeTableView */,
 				E9B54ADD1A5AC9BC007A20A0 /* officalWebView */,
+				E9B54B121A5B90A4007A20A0 /* koryakuWebView */,
 				E9B54AE01A5AC9BC007A20A0 /* rankingTableView */,
 				E9B54AE51A5AC9BC007A20A0 /* searchTableView */,
 				E9B54AEA1A5AC9BC007A20A0 /* settingView */,
@@ -287,6 +291,15 @@
 			path = SwipeView;
 			sourceTree = "<group>";
 		};
+		E9B54B121A5B90A4007A20A0 /* koryakuWebView */ = {
+			isa = PBXGroup;
+			children = (
+				E9B54B131A5B9583007A20A0 /* koryakuWebViewController.h */,
+				E9B54B141A5B9583007A20A0 /* koryakuWebViewController.m */,
+			);
+			path = koryakuWebView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -395,6 +408,7 @@
 				E9B54A971A5AC6FF007A20A0 /* AppDelegate.m in Sources */,
 				E9B54AF01A5AC9BC007A20A0 /* homeTableViewController.m in Sources */,
 				E9B54B0D1A5ACEBF007A20A0 /* TabHeaderView.m in Sources */,
+				E9B54B151A5B9583007A20A0 /* koryakuWebViewController.m in Sources */,
 				E9B54B0C1A5ACEBF007A20A0 /* TabHeaderButton.m in Sources */,
 				E9B54AF61A5AC9BC007A20A0 /* settingTableViewCell.m in Sources */,
 				E9B54B021A5ACC00007A20A0 /* callClass.m in Sources */,
