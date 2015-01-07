@@ -55,8 +55,6 @@
     [self sendSubviewToBack:self.scrollView];
     
     [self adjust];
-    NSLog(@"yobaretayo!!");
-
 }
 
 - (void)adjust {
@@ -78,8 +76,6 @@
     _page = page;
     [self.delegate setPage:_page];
     [self adjust];
-    NSLog(@"pageがセットされたよ！");
-    NSLog(@"%ld",(long)_page);
 }
 
 

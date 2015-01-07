@@ -40,7 +40,6 @@
 - (void)view_Tapped:(UITapGestureRecognizer *)sender
 {
     [self.delegate setPage:_page];
-    NSLog(@"タップ");
 }
 
 - (void)setTitle:(NSString *)title {

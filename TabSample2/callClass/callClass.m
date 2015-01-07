@@ -49,6 +49,7 @@
              Item *item = [[Item alloc] init];
              item.title = dict[@"title"][@"text"];
              item.date = dict[@"published"][@"text"];
+
              item.url = dict[@"link"][@"href"];
              item.blog = @"テラバトル攻略まとめWiki - GAMY";
              

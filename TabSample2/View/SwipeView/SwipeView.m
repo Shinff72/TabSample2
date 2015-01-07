@@ -18,14 +18,12 @@
 - (void)setPage:(NSInteger)page {
     if (page == _page)return;
     _page = page;
-    NSLog(@"___%ld",(long)_page);
     [self.swipeViewDelegate setPage:_page];
     [self adjust];
 }
 
 - (void)adjust {
     CGFloat x = self.bounds.size.width*_page;
-    NSLog(@"_____%f",x);
     [self setContentOffset:CGPointMake(x, 0.0f) animated:YES];
 }
 
@@ -33,7 +31,6 @@
     float a = ((int)scrollView.contentOffset.x % (int)self.bounds.size.width );
     if (a == 0) {
         self.page = scrollView.contentOffset.x / self.bounds.size.width;
-        NSLog(@"呼ばれたよ！");
     }
 }
 

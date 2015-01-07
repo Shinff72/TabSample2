@@ -27,7 +27,9 @@
 
 @end
 
-@implementation searchTableViewController
+@implementation searchTableViewController {
+    NSDate *date;
+}
 
 - (void)viewDidLoad
 {
@@ -77,11 +79,15 @@
         item.title = [item.title stringByReplacingOccurrencesOfString:@"【テラバトル】" withString:@""];
         cell.titleLabel.text = item.title;
         
+        NSDateFormatter* formatter = [NSDateFormatter new];
+        formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
+        formatter.timeZone = [NSTimeZone timeZoneWithName:@"en_US"];
+        date = [formatter dateFromString:item.date];
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
         [format setDateFormat:@"yyyy/MM/dd"];
         
-        cell.dateLabel.text = [format stringFromDate:item.date];
+        cell.dateLabel.text = [format stringFromDate:date];
     } else {
     
     NSSortDescriptor* dec = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
@@ -92,11 +98,15 @@
     item.title = [item.title stringByReplacingOccurrencesOfString:@"【テラバトル】" withString:@""];
     cell.titleLabel.text = item.title;
     
+    NSDateFormatter* formatter = [NSDateFormatter new];
+    formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
+    formatter.timeZone = [NSTimeZone timeZoneWithName:@"en_US"];
+    date = [formatter dateFromString:item.date];
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     [format setDateFormat:@"yyyy/MM/dd"];
-    
-    cell.dateLabel.text = [format stringFromDate:item.date];
+        
+    cell.dateLabel.text = [format stringFromDate:date];
     }
     return cell;
 }
@@ -128,23 +138,17 @@
     return YES;
 }
 
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-{
-    // 検索開始時に、ナビゲーションバーを隠します。
-    self.searchDisplayController.searchContentsController.navigationController.navigationBarHidden = YES;
-}
-
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
-{
-    // 検索終了時にナビゲーションバーを表示します。
-    self.searchDisplayController.searchContentsController.navigationController.navigationBarHidden = NO;
-}
-
 - (void)filterContainsWithSearchText:(NSString *)searchText
 {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
-        
-    self.dataSourceSearchResults = [_tableItems filteredArrayUsingPredicate:predicate];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title CONTAINS[c] %@", searchText];
+    
+    _dataSourceSearchResults = [_tableItems filteredArrayUsingPredicate:predicate];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+    [self.tableView reloadData];
+    NSLog(@"呼ばれたよ！");
 }
 
 - (void)didReceiveMemoryWarning {

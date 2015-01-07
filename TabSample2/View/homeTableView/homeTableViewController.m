@@ -17,7 +17,9 @@
 
 @end
 
-@implementation homeTableViewController
+@implementation homeTableViewController {
+    NSDate *date;
+}
 
 - (void)viewDidLoad
 {
@@ -57,12 +59,16 @@
     item.title = [item.title stringByReplacingOccurrencesOfString:@"【テラバトル】" withString:@""];
     cell.titleLabel.text = item.title;
     
+    NSDateFormatter* formatter = [NSDateFormatter new];
+    formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
+    formatter.timeZone = [NSTimeZone timeZoneWithName:@"en_US"];
+    date = [formatter dateFromString:item.date];//④日付追加
+    
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     [format setDateFormat:@"yyyy/MM/dd"];
-    
-    cell.dateLabel.text = [format stringFromDate:item.date];
-    
+    cell.dateLabel.text = [format stringFromDate:date];
+
     cell.blogLabel.text = item.blog;
     
     return cell;
