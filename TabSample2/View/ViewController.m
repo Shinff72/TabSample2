@@ -32,6 +32,10 @@
     tabHeaderView.tabs = _tabs;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
 - (void)setPage:(NSInteger)page {
     if(_page==page)return;
 //    testLabel.text = [NSString stringWithFormat:@"%ld",(long)page];
