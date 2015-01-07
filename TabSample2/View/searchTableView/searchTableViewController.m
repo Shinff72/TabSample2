@@ -35,6 +35,8 @@
     callClass *cc = [[callClass alloc] init]; // クラス呼び出し
     cc.delegate = self;
     [cc CallMethod]; // メソッド呼び出し}
+    self.searchDisplayController.delegate = self;
+
 }
 
 - (void)callSuccess
@@ -66,20 +68,20 @@
     searchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-//        NSSortDescriptor* dec = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
-//        _dataSourceSearchResults = [_dataSourceSearchResults sortedArrayUsingDescriptors:[NSMutableArray arrayWithObject:dec]];
-//        
-//        Item *item = _dataSourceSearchResults[indexPath.row];
-//        
-//        
-//        item.title = [item.title stringByReplacingOccurrencesOfString:@"【テラバトル】" withString:@""];
-//        cell.titleLabel.text = item.title;
-//        
-//        NSDateFormatter *format = [[NSDateFormatter alloc] init];
-//        [format setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-//        [format setDateFormat:@"yyyy/MM/dd"];
-//        
-//        cell.dateLabel.text = [format stringFromDate:item.date];
+        NSSortDescriptor* dec = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
+        _dataSourceSearchResults = [_dataSourceSearchResults sortedArrayUsingDescriptors:[NSMutableArray arrayWithObject:dec]];
+        
+        Item *item = _dataSourceSearchResults[indexPath.row];
+        
+        
+        item.title = [item.title stringByReplacingOccurrencesOfString:@"【テラバトル】" withString:@""];
+        cell.titleLabel.text = item.title;
+        
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+        [format setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+        [format setDateFormat:@"yyyy/MM/dd"];
+        
+        cell.dateLabel.text = [format stringFromDate:item.date];
     } else {
     
     NSSortDescriptor* dec = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
@@ -110,16 +112,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"タップされたよ！");
     
-    //    webViewController *webViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"webViewController"];
-    //    webViewController.item = _RSSItems[indexPath.row];
-    //    [self.navigationController pushViewController:webViewController animated:YES];
-}
-
-- (void)filterContainsWithSearchText:(NSString *)searchText
-{
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
-    
-    self.dataSourceSearchResults = [_tableItems filteredArrayUsingPredicate:predicate];
+        webViewController *webViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"webViewController"];
+        webViewController.item = _tableItems[indexPath.row];
+        [self.navigationController pushViewController:webViewController animated:YES];
 }
 
 - (BOOL)searchDisplayController:controller shouldReloadTableForSearchString:(NSString *)searchString
@@ -129,8 +124,27 @@
     
     // YESを返すとテーブルビューがリロードされます。
     // リロードすることでdataSourceSearchResultsiPhoneとdataSourceSearchResultsAndroidからテーブルビューを表示します
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
     return YES;
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    // 検索開始時に、ナビゲーションバーを隠します。
+    self.searchDisplayController.searchContentsController.navigationController.navigationBarHidden = YES;
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    // 検索終了時にナビゲーションバーを表示します。
+    self.searchDisplayController.searchContentsController.navigationController.navigationBarHidden = NO;
+}
+
+- (void)filterContainsWithSearchText:(NSString *)searchText
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
+        
+    self.dataSourceSearchResults = [_tableItems filteredArrayUsingPredicate:predicate];
 }
 
 - (void)didReceiveMemoryWarning {

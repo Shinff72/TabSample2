@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PoU-9F-iNb">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
@@ -14,6 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="sbQ-UO-i6G">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="d7g-Am-5uL" kind="relationship" relationship="rootViewController" id="Gyr-ZN-BEe"/>
                     </connections>
@@ -31,48 +35,60 @@
                         <viewControllerLayoutGuide type="bottom" id="dtP-Ee-Jtj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qi1-sB-oRP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIw-oA-aKW" customClass="TabHeaderView">
-                                <rect key="frame" x="0.0" y="20" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="40"/>
+                                <subviews>
+                                    <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWc-Xc-sUz">
+                                        <rect key="frame" x="0.0" y="36" width="320" height="4"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="qTY-hg-Ins"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="kSe-Ww-TxF"/>
+                                    <constraint firstAttribute="bottom" secondItem="aWc-Xc-sUz" secondAttribute="bottom" id="7ob-K7-g34"/>
+                                    <constraint firstAttribute="trailing" secondItem="aWc-Xc-sUz" secondAttribute="trailing" id="hh4-rw-pTe"/>
+                                    <constraint firstAttribute="height" constant="40" id="kSe-Ww-TxF"/>
+                                    <constraint firstItem="aWc-Xc-sUz" firstAttribute="leading" secondItem="TIw-oA-aKW" secondAttribute="leading" id="qU3-Vh-JwW"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpx-9j-JYJ" customClass="SwipeView">
-                                <rect key="frame" x="0.0" y="100" width="320" height="468"/>
+                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBx-TD-aEG">
-                                        <rect key="frame" x="0.0" y="0.0" width="1600" height="468"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1600" height="508"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BbJ-mh-CgZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="468"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
                                                 <connections>
                                                     <segue destination="n7Z-34-Xco" kind="embed" id="2Ac-bf-qZC"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXT-wV-73a">
-                                                <rect key="frame" x="320" y="0.0" width="320" height="468"/>
+                                                <rect key="frame" x="320" y="0.0" width="320" height="508"/>
                                                 <connections>
-                                                    <segue destination="bxt-UZ-d0r" kind="embed" id="NXD-5z-o09"/>
+                                                    <segue destination="7uZ-Lf-9dQ" kind="embed" id="5YT-VU-xQk"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GpZ-tB-RfL">
-                                                <rect key="frame" x="640" y="0.0" width="320" height="468"/>
+                                                <rect key="frame" x="640" y="0.0" width="320" height="508"/>
                                                 <connections>
-                                                    <segue destination="7uZ-Lf-9dQ" kind="embed" id="CEv-E2-pQb"/>
+                                                    <segue destination="bxt-UZ-d0r" kind="embed" id="Ugz-2R-RAc"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLI-kv-CQx">
-                                                <rect key="frame" x="960" y="0.0" width="320" height="468"/>
+                                                <rect key="frame" x="960" y="0.0" width="320" height="508"/>
                                                 <connections>
                                                     <segue destination="icf-eo-N2U" kind="embed" id="LWs-ft-IaM"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ce-EP-60u">
-                                                <rect key="frame" x="1280" y="0.0" width="320" height="468"/>
+                                                <rect key="frame" x="1280" y="0.0" width="320" height="508"/>
                                                 <connections>
                                                     <segue destination="tf8-IC-hcQ" kind="embed" id="ako-eK-yvU"/>
                                                 </connections>
@@ -181,7 +197,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ここにブログ名が入ります。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zby-SZ-hES">
-                                                    <rect key="frame" x="8" y="53" width="117" height="21"/>
+                                                    <rect key="frame" x="8" y="53" width="160" height="21"/>
                                                     <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="9"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -339,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLF-i4-gAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="253" y="1276"/>
+            <point key="canvasLocation" x="-189" y="1275"/>
         </scene>
         <!--Koryaku Web View Controller-->
         <scene sceneID="yRo-cW-acb">
@@ -373,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Xr-uv-vRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-217" y="1275"/>
+            <point key="canvasLocation" x="227" y="1276"/>
         </scene>
         <!--Search Table View Controller-->
         <scene sceneID="wkY-sm-MkH">
@@ -398,7 +414,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8c-dx-Fmc">
-                                                    <rect key="frame" x="8" y="29" width="42" height="21"/>
+                                                    <rect key="frame" x="8" y="30" width="216" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -409,9 +425,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJG-HI-Gx9">
-                                                    <rect key="frame" x="232" y="0.0" width="80" height="80"/>
-                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJG-HI-Gx9"/>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2014/12/12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXL-f6-Zsg">
                                                     <rect key="frame" x="155" y="50" width="69" height="21"/>
                                                     <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="11"/>
@@ -473,7 +487,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="665" y="1276"/>
+            <point key="canvasLocation" x="665" y="1275"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="enq-QB-tVI">
@@ -501,6 +515,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="webView" destination="aSx-sN-xeY" id="JJx-sI-hNd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oiy-ZN-ywp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

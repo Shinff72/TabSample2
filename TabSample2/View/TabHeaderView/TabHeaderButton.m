@@ -26,9 +26,12 @@
 
 - (void)initialization {
     
+    self.layer.cornerRadius = 4;
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(view_Tapped:)];
     [self addGestureRecognizer:tapGesture];
     titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 50)];
+    titleLabel.textAlignment = UITextAlignmentCenter;
+    titleLabel.font = [UIFont systemFontOfSize:16];
     [self addSubview:titleLabel];
     self.selected = NO;
     
@@ -37,6 +40,7 @@
 - (void)view_Tapped:(UITapGestureRecognizer *)sender
 {
     [self.delegate setPage:_page];
+    NSLog(@"タップ");
 }
 
 - (void)setTitle:(NSString *)title {
@@ -46,9 +50,12 @@
 
 - (void)setSelected:(BOOL)selected {
     if (selected) {
-        self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.6];
+        self.backgroundColor = [UIColor darkGrayColor];
+        titleLabel.textColor = [UIColor whiteColor];
     } else {
         self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.2];
+        titleLabel.textColor = [UIColor darkGrayColor];
+
     }
     _selected = selected;
 }

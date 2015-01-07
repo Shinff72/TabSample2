@@ -50,10 +50,11 @@
              item.title = dict[@"title"][@"text"];
              item.date = dict[@"published"][@"text"];
              item.url = dict[@"link"][@"href"];
+             item.blog = @"テラバトル攻略まとめWiki - GAMY";
              
 //             NSLog(@"%@",item.title);
 //             NSLog(@"%@",item.date);
-             NSLog(@"URL___%@",item.url);
+//             NSLog(@"URL___%@",item.url);
              
              [items addObject:item];
              
@@ -94,10 +95,11 @@
              item.title = dict[@"title"][@"text"];
              item.date = dict[@"published"][@"text"];
              item.url = dict[@"link"][@"href"];
+             item.blog = @"ガールフレンド（仮）完全攻略図鑑 - GAMY";
              
 //             NSLog(@"%@",item.title);
 //             NSLog(@"%@",item.date);
-             NSLog(@"URL___%@",item.url);
+//             NSLog(@"URL___%@",item.url);
 
              [items addObject:item];
              
@@ -138,11 +140,12 @@
              item.title = dict[@"title"][@"text"];
              item.date = dict[@"published"][@"text"];
              item.url = dict[@"link"][@"href"];
+             item.blog = @"白猫プロジェクト（白プロ）攻略まとめWiki - GAMY";
 
              
 //             NSLog(@"%@",item.title);
 //             NSLog(@"%@",item.date);
-             NSLog(@"URL___%@",item.url);
+//             NSLog(@"URL___%@",item.url);
              
              [items addObject:item];
              

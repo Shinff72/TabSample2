@@ -63,6 +63,8 @@
     
     cell.dateLabel.text = [format stringFromDate:item.date];
     
+    cell.blogLabel.text = item.blog;
+    
     return cell;
 }
 

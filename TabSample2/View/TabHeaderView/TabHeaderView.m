@@ -33,6 +33,7 @@
 - (void)layoutSubviews {
     //サブビューのフレームはここで調節した方がよい。
     _scrollView.frame = self.bounds;
+    _scrollView.showsHorizontalScrollIndicator = NO;
 }
 
 - (void)setTabs:(NSArray *)tabs {
@@ -52,6 +53,7 @@
     [_views addObject:button];
     [_scrollView addSubview:button];
     [self adjust];
+    NSLog(@"yobaretayo!!");
 
 }
 
@@ -62,11 +64,11 @@
         button.page = i;
         button.selected = (i == _page);
     }
-    _scrollView.contentSize = CGSizeMake(TABWIDTH*_views.count, self.bounds.size.height);
+    _scrollView.contentSize = CGSizeMake((TABWIDTH+2)*_views.count, self.bounds.size.height);
     TabHeaderButton *button = _views[_page];
-    CGFloat x = button.center.x-_scrollView.bounds.size.width/2;    
+    CGFloat x = button.center.x-self.bounds.size.width/2;
     x = MIN(MAX(x, 0), _scrollView.contentSize.width - _scrollView.bounds.size.width);
-    [_scrollView setContentOffset:CGPointMake(x, 0.0f) animated:YES];
+    [_scrollView setContentOffset:CGPointMake(x-1, 0.0f) animated:YES];
 }
 
 - (void)setPage:(NSInteger)page {
@@ -74,6 +76,8 @@
     _page = page;
     [self.delegate setPage:_page];
     [self adjust];
+    NSLog(@"pageがセットされたよ！");
+    NSLog(@"%ld",(long)_page);
 }
 
 
