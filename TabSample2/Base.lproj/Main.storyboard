@@ -51,10 +51,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="aWc-Xc-sUz" secondAttribute="bottom" id="7ob-K7-g34"/>
-                                    <constraint firstAttribute="trailing" secondItem="aWc-Xc-sUz" secondAttribute="trailing" id="hh4-rw-pTe"/>
+                                    <constraint firstAttribute="trailing" secondItem="aWc-Xc-sUz" secondAttribute="trailing" id="1JZ-JT-h2b"/>
+                                    <constraint firstItem="aWc-Xc-sUz" firstAttribute="leading" secondItem="TIw-oA-aKW" secondAttribute="leading" id="NsI-nb-212"/>
                                     <constraint firstAttribute="height" constant="40" id="kSe-Ww-TxF"/>
-                                    <constraint firstItem="aWc-Xc-sUz" firstAttribute="leading" secondItem="TIw-oA-aKW" secondAttribute="leading" id="qU3-Vh-JwW"/>
+                                    <constraint firstAttribute="bottom" secondItem="aWc-Xc-sUz" secondAttribute="bottom" id="xK2-Rq-44O"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpx-9j-JYJ" customClass="SwipeView">

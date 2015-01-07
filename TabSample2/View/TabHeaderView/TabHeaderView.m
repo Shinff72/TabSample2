@@ -52,6 +52,8 @@
 
     [_views addObject:button];
     [_scrollView addSubview:button];
+    [self sendSubviewToBack:self.scrollView];
+    
     [self adjust];
     NSLog(@"yobaretayo!!");
 
