@@ -7,8 +7,10 @@
 //
 
 #import "settingViewController.h"
+#import "Item.h"
 
 @interface settingViewController ()
+@property (nonatomic) NSMutableArray *items;
 
 @end
 
@@ -16,22 +18,60 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    _items = [NSMutableArray array];
+    
+    Item *item = [[Item alloc] init];
+    item.title = @"利用規約";
+    item.url = [[NSBundle mainBundle] pathForResource:@"kiyaku" ofType:@"html" inDirectory:@"www"];
+    [_items addObject:item];
 }
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Item *item = [[Item alloc] init];
+    NSString *cellIdentifier = @"settingTableViewCell";
+    settingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    item = [_items objectAtIndex:indexPath.row];
+    cell.titleLabel.text = item.title;
+    tableView.scrollEnabled = NO;
+    return cell;
+    
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 60;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+    webViewController *webViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"webViewController"];
+    webViewController.item = _items[indexPath.row];
+    [self.navigationController pushViewController:webViewController animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

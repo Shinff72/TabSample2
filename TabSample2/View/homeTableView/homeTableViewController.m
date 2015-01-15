@@ -26,14 +26,16 @@
     [super viewDidLoad];
     callClass *cc = [[callClass alloc] init]; // クラス呼び出し
     cc.delegate = self;
-    [cc CallMethod]; // メソッド呼び出し}
+    [cc CallMethod]; // メソッド呼び出し
 }
 
 - (void)callSuccess
 {
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate]; // デリゲート呼び出し
     _tableItems = appDelegate.RSSItems; // 代入
-    [self.tableView reloadData];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -59,15 +61,10 @@
     item.title = [item.title stringByReplacingOccurrencesOfString:@"【テラバトル】" withString:@""];
     cell.titleLabel.text = item.title;
     
-    NSDateFormatter* formatter = [NSDateFormatter new];
-    formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
-    formatter.timeZone = [NSTimeZone timeZoneWithName:@"en_US"];
-    date = [formatter dateFromString:item.date];//④日付追加
-    
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     [format setDateFormat:@"yyyy/MM/dd"];
-    cell.dateLabel.text = [format stringFromDate:date];
+    cell.dateLabel.text = [format stringFromDate:item.date];
 
     cell.blogLabel.text = item.blog;
     
@@ -89,6 +86,8 @@
         webViewController.item = _tableItems[indexPath.row];
         [self.navigationController pushViewController:webViewController animated:YES];
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

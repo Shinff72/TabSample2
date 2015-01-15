@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSURL *url = [NSURL URLWithString:@"http://ohako-inc.jp"];
+    NSURL *url = [NSURL URLWithString:@"http://wiki.famitsu.com/kairi/"];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:req];
 }

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SearchTable2ViewController.h"
 
 @interface ViewController ()
 
@@ -40,9 +41,11 @@
     if(_page==page)return;
 //    testLabel.text = [NSString stringWithFormat:@"%ld",(long)page];
     _page = page;
-    swipeView.page = _page
-    ;
+    swipeView.page = _page;
     tabHeaderView.page = _page;
+    
+    SearchTable2ViewController *search2 = [[self storyboard] instantiateViewControllerWithIdentifier:@"SearchTable2ViewController"];
+    search2.page = _page;
 }
 
 - (void)didReceiveMemoryWarning {

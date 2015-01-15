@@ -14,7 +14,7 @@
 @property (nonatomic) NSString *url;
 @property (nonatomic) NSString *blog;
 @property (nonatomic) NSString *thumbnailURL;
-@property (nonatomic) NSString *date;
+@property (nonatomic) NSDate *date;
 @property (nonatomic) NSString *dateStr;
 
 @end

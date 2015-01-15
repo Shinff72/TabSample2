@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "settingTableViewCell.h"
+#import "webViewController.h"
 
-@interface settingViewController : UIViewController
+@interface settingViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
 @end
